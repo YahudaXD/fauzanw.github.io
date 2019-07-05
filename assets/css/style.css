@@ -78,6 +78,11 @@ body {
         color: #fff;
         font-weight: 400;
     }
+
+    .header .navbar .navbar-toggler {
+        color: #fff;
+
+    }
 }
 
 
@@ -133,6 +138,10 @@ body {
     }
     .about-banner h5 {
         color: #7954ff !important;
+    }
+
+    .navbar-toggler:focus {
+        outline: none
     }
 }
 
@@ -216,6 +225,14 @@ body {
     right: 15%;
     width: 535px;
     height: 535px
+}
+
+.header {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease
 }
 
 .header .navbar {
