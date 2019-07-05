@@ -1,0 +1,347 @@
+@font-face {
+    font-family: 'Montserrat';
+    src:url('../fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fonts/RobotoSlab-Regular.ttf');
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%
+}
+
+
+.profile-banner {
+    position: relative;
+    height: 654px;
+    width: 100%;
+    overflow: hidden;
+    background: -webkit-linear-gradient(230deg, #4a62ff 0%, #3b5998 100%);
+    background: linear-gradient(220deg, #4a62ff 0%, #3b5998 100%)
+}
+
+.profile-banner .profile-content {
+    position: absolute;
+    top: 60%;
+    display: inherit;
+    height: auto;
+    width: 100%;
+    -webkit-transform: translateY(-40%);
+    -ms-transform: translateY(-40%);
+    transform: translateY(-40%)
+}
+
+.profile-title {
+    font-size: 48px;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-family: 'Montserrat', serif;
+}
+
+.profile-banner .profile-sub-title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 3rem;
+    color: #fff
+}
+
+.profile-banner .banner-img {
+    position: relative;
+    top: -20%
+}
+
+@media (max-width:1024px) {
+
+    .header .nav-item .nav-link {
+        color: #3c434f
+    }
+
+    .header.navbar-purple {
+        background: #4a62ff
+    }
+    .profile-banner {
+        height: 654px;
+        background: #7158e3;
+    }
+    .profile-banner .profile-title {
+        font-size: 36px;
+        color: #fff;
+        font-weight: 400;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .header .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: .5rem;
+        padding-left: .5rem
+    }
+    .profile-banner {
+        height: 654px;
+    }
+
+    .profile-banner .banner-img {
+        display: none;
+    }
+
+    .profile-content {
+        top: 40% !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .header .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem
+    }
+
+    .header {
+        background-color: black !important;
+    }
+
+    .header .navbar-brand {
+        padding:0;
+        margin: 0;
+    }
+
+    .header .nav-link {
+        background-color: black !important;
+    }
+    .profile-banner {
+        height: 654px;
+    }
+    .profile-banner .profile-title {
+        font-size: 2rem;
+    }
+
+    .profile-banner .profile-sub-title {
+        font-size: 1.2rem;
+    }
+
+    .profile-banner .banner-img {
+        display: none
+    }
+    .about-banner h5 {
+        color: #7954ff !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-banner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: -webkit-linear-gradient(130deg, #4a5b6b 40%, #4a62ff 100%);
+        background: linear-gradient(120deg, #4a5b6b 40%, #4a62ff 100%)
+    }
+}
+
+
+@media (min-width:768px) {
+    .header {
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        padding-top: 2rem;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+    }
+    .header .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem
+    }
+}
+
+@media (max-width: 640px) {
+    .header {
+        background-color: black;
+    }
+    .profile-banner {
+        height: 654px;
+    }
+
+    .profile-banner .profile-title {
+        font-size: 1.3rem;
+    }
+
+    .profile-banner .profile-sub-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .profile-banner .profile-title {
+        top: 30%;
+    }
+}
+
+.bubble-set {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto
+}
+
+.bubble-set div {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .04)
+}
+
+.bubble-set .bubble-lg {
+    top: calc(100% - 300px);
+    left: 2%;
+    width: 950px;
+    height: 950px
+}
+
+.bubble-set .bubble-md {
+    top: -300px;
+    right: -10%;
+    width: 835px;
+    height: 835px
+}
+
+.bubble-set .bubble-sm {
+    top: 0;
+    right: 15%;
+    width: 535px;
+    height: 535px
+}
+
+.header .navbar {
+    font-family: 'Montserrat',
+    sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    padding: .5rem 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.header .navbar-brand {
+    padding: .5rem;
+    color: #fff;
+}
+
+.header .nav-item .nav-link {
+    color: #fff
+}
+
+.header .nav-item .active,
+.header .nav-item .nav-link:hover {
+    color: #4bc3c3
+}
+
+.header .nav-item .dropdown-menu {
+    z-index: 200;
+    width: 14rem;
+    margin-top: 0;
+    border: none;
+    background: #3c434f
+}
+
+.header .nav-item .dropdown-menu .dropdown-item {
+    font-size: 11px;
+    padding: .5rem 1.5rem;
+    color: #fff
+}
+
+.header .nav-item .dropdown-menu .dropdown-item.active,
+.header .nav-item .dropdown-menu .dropdown-item:focus,
+.header .nav-item .dropdown-menu .dropdown-item:hover {
+    color: #4bc3c3;
+    background: 0 0
+}
+
+.header .nav-item .dropdown-menu:before {
+    font-family: fontawesome;
+    font-size: 25px;
+    position: absolute;
+    top: -22px;
+    bottom: -15px;
+    left: 15%;
+    height: 22px;
+    margin-left: -7px;
+    content: '\f0d8';
+    color: #3c434f
+}
+
+.header .navbar-collapse {
+    margin-top: .8rem
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block
+}
+
+.table-profile.table td{
+   border-top-style: none;
+}
+
+.text-purple {
+    color: #7954ff;
+    font-weight: bold;
+    text-shadow: -2px 1px 4px rgba(0, 0, 0, 0.97);
+}
+
+.text-shadow {
+    text-shadow: -2px 1px 4px rgba(0, 0, 0, 0.97);
+}
+
+.text-green-gradient {
+    color: #20c995;
+}
+
+.bg-green-gradient {
+    background-color: #20c995;
+}
+
+.btn-green-gradient {
+    background-color: #20c995;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #20c995;
+    border: none;
+}
+
+
+.bg-dark-gradient {
+    background-color: #4a5b6b;
+}
+
+.pb-9 {
+    padding-bottom: 90px;
+}
+
+.pb-12 {
+    padding-bottom: 120px;
+}
+
+.pt-9 {
+    padding-top: 90px;
+}
+
+
+.bg-gradient-primary {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: -webkit-linear-gradient(530deg, #4a62ff 40%, #9335ff 100%);
+    background: linear-gradient(520deg, #4a62ff 40%, #9335ff 100%)
+}
+
+.no-border {
+    border: none;
+}
