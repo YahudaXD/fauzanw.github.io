@@ -120,6 +120,10 @@ body {
     .profile-content {
         top: 40% !important;
     }
+
+    .profile-banner .profile-footer {
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
