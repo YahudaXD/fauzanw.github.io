@@ -143,6 +143,9 @@ body {
     .navbar-toggler:focus {
         outline: none
     }
+    .skill {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
@@ -191,6 +194,13 @@ body {
 @media (max-width: 550px) {
     .profile-banner .profile-title {
         top: 30%;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer h5 {
+        font-size: 0.90rem;
+        font-family: 'Montserrat', sans-serif
     }
 }
 
@@ -399,4 +409,11 @@ body {
 
 .no-border {
     border: none;
+}
+
+.btn-social-media:hover {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
 }
