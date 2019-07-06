@@ -60,6 +60,24 @@ body {
     top: -20%
 }
 
+.profile-footer {
+    position: absolute;
+    z-index: 1;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover
+}
+
+@media (min-width: 1600px) {
+    .profile-banner .profile-footer {
+        height: 300px
+    }
+}
+
 @media (max-width:1024px) {
 
     .header .nav-item .nav-link {
