@@ -1,17 +1,65 @@
 new WOW().init();
 
-$('.scroll').on('click', function(e) {
-    var href = $(this).attr('href');
-    console.log(href);
-    var elemenHref = $(href);
-    $('html, body').animate({
-        scrollTop: elemenHref.offset().top
-    }, 1250, 'easeInOutExpo')
+$(function() {
+    var sections = $('section')
+        , nav = $('nav')
+        , nav_height = nav.outerHeight();
 
-    e.preventDefault();
+    $(window).on('scroll', function () {
+        var cur_pos = $(this).scrollTop();
+
+        sections.each(function () {
+            var top = $(this).offset().top - nav_height,
+                bottom = top + $(this).outerHeight();
+
+            if (cur_pos >= top && cur_pos <= bottom) {
+                nav.find('a').removeClass('active');
+                sections.removeClass('active');
+
+                $(this).addClass('active');
+                if ($(this).attr('id') != "home") {
+                    nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+                } else {
+                    $('a.nav-link.home').addClass('active');
+                }
+            }
+
+            if($(this).offset().top == 0) {
+                nav.find('a').removeClass('active');
+                $('a.nav-link[href="home"]').addClass('active');
+            }
+        });
+    });
+
+    nav.find('a.scroll').on('click', function (e) {
+        var el = $(this)
+            , id = el.attr('href');
+
+        if(id == "#skills") {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 1e3, 'easeInOutExpo');
+        }else {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top - nav_height
+            }, 1e3, 'easeInOutExpo');
+        }
+
+        if(id == "#home") {
+            nav.find('a').removeClass('active');
+            $('a.nav-link.home').addClass('active');
+        }else {
+            $(id).removeClass('active')
+            return false;
+        }
+        e.preventDefault();
+    });
+    $(window).on("scroll", function () {
+        $(window).width() > 767 && $(this).scrollTop() > 1 ? $(".header").addClass("navbar-sticky") : $(".header").removeClass("navbar-sticky")
+    })
 })
 
-! function (e) {
+!function (e) {
     $("#particles-js").length > 0 && particlesJS("particles-js", {
         particles: {
             number: {
