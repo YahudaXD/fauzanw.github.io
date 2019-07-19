@@ -89,7 +89,6 @@ body {
     }
     .profile-banner {
         height: 654px;
-        background: #7158e3;
     }
     .profile-banner .profile-title {
         font-size: 36px;
@@ -360,6 +359,11 @@ body {
     font-weight: bold;
     text-shadow: -2px 1px 4px rgba(0, 0, 0, 0.97);
 }
+.text-purple-shadow-white {
+    color: #7954ff;
+    font-weight: bold;
+    text-shadow: 1px 4px 2px black;
+}
 
 .text-shadow {
     text-shadow: -2px 1px 4px rgba(0, 0, 0, 0.97);
@@ -431,6 +435,7 @@ body {
 
 .no-border {
     border: none;
+    outline: none;
 }
 
 .bg-black {
@@ -442,4 +447,17 @@ body {
     transform: rotate(360deg);
     -webkit-transition: -webkit-transform .8s ease-in-out;
     transition: transform .8s ease-in-out;
+}
+
+.header {
+    position: fixed;
+    transition: .3s;
+}
+
+.notfound {
+    background-image: url('../img/404.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

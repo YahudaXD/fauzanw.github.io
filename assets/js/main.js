@@ -1,6 +1,6 @@
 new WOW().init();
 
-$(function() {
+$(function () {
     var sections = $('section')
         , nav = $('nav')
         , nav_height = nav.outerHeight();
@@ -9,7 +9,7 @@ $(function() {
         var cur_pos = $(this).scrollTop();
 
         sections.each(function () {
-            var top = $(this).offset().top - nav_height,
+            var top = $(this).offset().top - nav_height - 20 + 5,
                 bottom = top + $(this).outerHeight();
 
             if (cur_pos >= top && cur_pos <= bottom) {
@@ -24,7 +24,7 @@ $(function() {
                 }
             }
 
-            if($(this).offset().top == 0) {
+            if ($(this).offset().top == 0) {
                 nav.find('a').removeClass('active');
                 $('a.nav-link[href="home"]').addClass('active');
             }
@@ -35,20 +35,14 @@ $(function() {
         var el = $(this)
             , id = el.attr('href');
 
-        if(id == "#skills") {
-            $('html, body').animate({
-                scrollTop: $(id).offset().top
-            }, 1e3, 'easeInOutExpo');
-        }else {
-            $('html, body').animate({
-                scrollTop: $(id).offset().top - nav_height
-            }, 1e3, 'easeInOutExpo');
-        }
+        $('html, body').animate({
+            scrollTop: $(id).offset().top - nav_height
+        }, 1e3, 'easeInOutExpo');
 
-        if(id == "#home") {
+        if (id == "#home") {
             nav.find('a').removeClass('active');
-            $('a.nav-link.home').addClass('active');
-        }else {
+            $('.home').addClass('active');
+        } else {
             $(id).removeClass('active')
             return false;
         }
