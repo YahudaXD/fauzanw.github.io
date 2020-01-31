@@ -163,64 +163,36 @@ $(function () {
     });
 }(jQuery);
 
-var maxtMVal = 1207;
-var maxtRVal = 20;
-var maxtCVal = 10850;
-var itm = parseInt($('.tMVal').text());
-var itr = parseInt($('.tMVal2').text())
-var itc = parseInt($('.tMVal3').text())
-var timtM;
-var timtR;
-var timtC;
-$(window).scroll(function() {
+$(document).ready(function() {
+    function runCounter() {
+        $('.counter').each(function() {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            },{
+                duration:$(this).data('duration'),
+                easing: 'swing',
+                step: now => {
+                    $(this).text(Math.ceil(now));
+                }
+            })
+        })
+    }
+    
+    $(window).scroll(function() {
+        const scroll = $(window).scrollTop();
+        if(scroll >= 2469) {
+            runCounter()
+        }else if(scroll > 2300 && scroll < 2500) {
+            runCounter()
+        }
+    })
     const scroll = $(window).scrollTop();
     if(scroll >= 2469) {
-        runtR();
-        runtM();
-        runtC();
+        runCounter()
     }else if(scroll > 2300 && scroll < 2500) {
-        runtR();
-        runtM();
-        runtC();
+        runCounter()
     }
 })
-const scroll = $(window).scrollTop();
-    if(scroll >= 2469) {
-        runtR();
-        runtM();
-        runtC();
-    }else if(scroll > 2300 && scroll < 2500) {
-        runtR();
-        runtM();
-        runtC();
-    }
-function runtM() {
-	timtM = setInterval(function() {
-		if (itm >= maxtMVal) {
-			clearInterval(timtM);
-			return;
-		}
-		$('.tMVal').text(++itm);
-	}, 20);
-}
-function runtR() {
-	timtR = setInterval(function() {
-		if (itr >= maxtRVal) {
-			clearInterval(timtR);
-			return;
-		}
-		$('.tMVal2').text(++itr);
-	}, 100);
-}
-function runtC() {
-	timtC = setInterval(function() {
-		if (itc >= maxtCVal) {
-			clearInterval(timtC);
-			return;
-		}
-		$('.tMVal3').text(++itc);
-	},0.01);
-}
 
 $(window).on('load', function () {
     $('body').addClass('loaded');
