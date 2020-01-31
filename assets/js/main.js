@@ -177,15 +177,6 @@ $(document).ready(function() {
             })
         })
     }
-    
-    $(window).scroll(function() {
-        const scroll = $(window).scrollTop();
-        if(scroll >= 2469) {
-            runCounter()
-        }else if(scroll > 2300 && scroll < 2500) {
-            runCounter()
-        }
-    })
     const scroll = $(window).scrollTop();
     if(scroll >= 2469) {
         runCounter()
