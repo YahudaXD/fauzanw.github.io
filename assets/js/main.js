@@ -51,6 +51,7 @@ $(function () {
     $(window).on("scroll", function () {
         $(window).width() > 767 && $(this).scrollTop() > 1 ? $(".header").addClass("navbar-sticky") : $(".header").removeClass("navbar-sticky")
     })
+    $(window).width() > 767 && $(this).scrollTop() > 1 ? $(".header").addClass("navbar-sticky") : $(".header").removeClass("navbar-sticky")
 })
 
 !function (e) {
@@ -161,3 +162,66 @@ $(function () {
         retina_detect: !0
     });
 }(jQuery);
+
+var maxtMVal = 1207;
+var maxtRVal = 20;
+var maxtCVal = 10850;
+var itm = parseInt($('.tMVal').text());
+var itr = parseInt($('.tMVal2').text())
+var itc = parseInt($('.tMVal3').text())
+var timtM;
+var timtR;
+var timtC;
+$(window).scroll(function() {
+    const scroll = $(window).scrollTop();
+    if(scroll >= 2469) {
+        runtR();
+        runtM();
+        runtC();
+    }else if(scroll > 2300 && scroll < 2500) {
+        runtR();
+        runtM();
+        runtC();
+    }
+})
+const scroll = $(window).scrollTop();
+    if(scroll >= 2469) {
+        runtR();
+        runtM();
+        runtC();
+    }else if(scroll > 2300 && scroll < 2500) {
+        runtR();
+        runtM();
+        runtC();
+    }
+function runtM() {
+	timtM = setInterval(function() {
+		if (itm >= maxtMVal) {
+			clearInterval(timtM);
+			return;
+		}
+		$('.tMVal').text(++itm);
+	}, 20);
+}
+function runtR() {
+	timtR = setInterval(function() {
+		if (itr >= maxtRVal) {
+			clearInterval(timtR);
+			return;
+		}
+		$('.tMVal2').text(++itr);
+	}, 100);
+}
+function runtC() {
+	timtC = setInterval(function() {
+		if (itc >= maxtCVal) {
+			clearInterval(timtC);
+			return;
+		}
+		$('.tMVal3').text(++itc);
+	},0.01);
+}
+
+$(window).on('load', function () {
+    $('body').addClass('loaded');
+});
