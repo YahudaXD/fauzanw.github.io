@@ -54,7 +54,7 @@ $(function () {
     $(window).width() > 767 && $(this).scrollTop() > 1 ? $(".header").addClass("navbar-sticky") : $(".header").removeClass("navbar-sticky")
 })
 
-!function (e) {
+$(document).ready(function() {
     $("#particles-js").length > 0 && particlesJS("particles-js", {
         particles: {
             number: {
@@ -161,13 +161,15 @@ $(function () {
         },
         retina_detect: !0
     });
-}(jQuery);
-
-$(document).ready(function() {
+    $('.counter').each(function() {
+        var count = $(this).text();
+        $(this).text(0)
+        $(this).data('data-count', count);
+    })
     function runCounter() {
         $('.counter').each(function() {
             $(this).prop('Counter', 0).animate({
-                Counter: $(this).text()
+                Counter: $(this).data('data-count')
             },{
                 duration:$(this).data('duration'),
                 easing: 'swing',
@@ -177,10 +179,20 @@ $(document).ready(function() {
             })
         })
     }
-    const scroll = $(window).scrollTop();
+
+    $(window).on('scroll', function() {
+        const scroll = $(window).scrollTop();
+        if(scroll == 2469) {
+            runCounter();
+        }else if(scroll > 2300 && scroll < 2470) {
+            runCounter()
+        }
+    })
+
+    var scroll = $(window).scrollTop();
     if(scroll >= 2469) {
         runCounter()
-    }else if(scroll > 2300 && scroll < 2500) {
+    }else if(scroll > 2300 && scroll < 2470) {
         runCounter()
     }
 })

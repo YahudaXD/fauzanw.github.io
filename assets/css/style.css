@@ -383,7 +383,6 @@ body {
 .text-purple {
     color: #7954ff;
     font-weight: bold;
-    text-shadow: -2px 1px 4px rgba(0, 0, 0, 0.97);
 }
 .text-purple-shadow-white {
     color: #7954ff;
@@ -500,6 +499,14 @@ body {
     background-repeat: no-repeat;
     background-size: 45%;
     background-position: 0 40%;
+}
+
+#contact {
+    position: relative;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../img/bg-contact.png);
 }
 
 .card-dark {
